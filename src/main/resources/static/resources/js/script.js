@@ -48,19 +48,18 @@ function pesquisarUser() {
 				alert("Erro: " + xhr.responseText)
 			})
 		}
-		
-		function deleteUserFromScreen(){
+
+		function deleteUserFromScreen() {
 			var id = $('#id').val();
-			if(id != null && id.trim() != '')
-			{
+			if (id != null && id.trim() != '') {
 				deleteUser(id)
-			document.getElementById('formUser').reset()
+				document.getElementById('formUser').reset()
 			}
-			
+
 		}
-		
-		function deleteUser(id){
-			if(confirm("Deseja deletar o usuário?")){
+
+		function deleteUser(id) {
+			if (confirm("Deseja deletar o usuário?")) {
 				$.ajax({
 					method : "DELETE",
 					url : "delete",
@@ -68,28 +67,28 @@ function pesquisarUser() {
 					success : function(response) {
 						$('#' + id).remove()
 						alert("response")
-						
+
 					}
 				}).fail(function(xhr, status, errorThrown) {
 					alert("Erro: " + xhr.responseText)
 				})
 			}
-			
+
 		}
-		
+
 		function salvarUsuario() {
 			var id = $("#id").val();
 			var name = $("#name").val();
 			var idade = $("#idade").val();
 
-			if(name == null || nome != null && nome.trim() == ''){
-				$('#name').focus()
+			if (name == null || name != null && name.trim() == '') {
+				$("#name").focus()
 				alert("Insira os dados corretamente.")
 				return;
 			}
 
-			if(idade == null || idade != null && idade.trim() == ''){
-				$('#idade').focus()
+			if (idade == null || idade != null && idade.trim() == '') {
+				$("#idade").focus()
 				alert("Insira os dados corretamente.")
 				return;
 			}
