@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+
+<title>Teste</title>
+</head>
+<body>
+
+	<form action="formUser" name="formUser" id="formUser" method="POST">
+		<div class="mb-3">
+			<label for="id" class="form-label">ID</label> <input type="text"
+				class="form-control" id="id" readonly="readonly">
+		</div>
+		<div class="mb-3">
+			<label for="name" class="form-label">Nome</label> <input type="text"
+				class="form-control" id="name" placeholder="Seu nome" required>
+		</div>
+		<div class="mb-3">
+			<label for="idade" class="form-label">Idade</label> <input
+				type="number" class="form-control" id="idade"
+				placeholder="Sua idade" required>
+		</div>
+	</form>
+	<button type="button" class="btn btn-primary" onclick="salvarUsuario()">Salvar</button>
+	<button type="button" class="btn btn-warning"
+		onclick="document.getElementById('formUser').reset()">Resetar</button>
+	<button type="button" class="btn btn-danger" data-bs-toggle="modal"
+		data-bs-target="#pesquisaModal">Pesquisar</button>
+	<button type="button" onclick="deleteUserFromScreen()"
+		class="btn btn-danger">Deletar</button>
+
+
+
+
+	<div class="modal fade" id="pesquisaModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Pesquisa de
+						usuário</h5>
+					<button type="button" class="close" data-bs-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="searchName" class="col-form-label">Informe o
+								nome do usuário</label> <input type="text" class="form-control"
+								id="searchName">
+						</div>
+						<button type="button" class="btn btn-success"
+							onclick="pesquisarUser()" )>Buscar</button>
+					</form>
+					<div class="tableContainer">
+						<table class="table" id="tabelaResultado">
+							<thead>
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Idade</th>
+									<th scope="col">Editar</th>
+									<th scope="col">Deletar</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Fechar</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<script src="resources/js/script.js"></script>
+</body>
+</html>
